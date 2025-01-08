@@ -9,7 +9,7 @@ import jwt_decode from 'jwt-decode';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8044/api/auth';
+  private apiUrl = 'users-service-production-1.up.railway.app/api/auth';
   private readonly TOKEN_KEY = 'token';
 
   constructor(private http: HttpClient, private router: Router) {}
