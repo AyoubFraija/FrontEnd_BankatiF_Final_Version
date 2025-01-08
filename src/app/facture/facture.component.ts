@@ -32,6 +32,7 @@ export class FactureComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFactures();
+    console.log('Factures récupérées', this.factures);
   }
   isLoading = false;
 

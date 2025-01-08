@@ -62,7 +62,7 @@ export class CreateClientComponent implements OnInit {
     this.hasAccess = userRoles.includes('ROLE_ADMIN') || userRoles.includes('ROLE_AGENT');
 
     if (!this.hasAccess) {
-      this.router.navigate(['/total']);
+      this.router.navigate(['/login1']);
     }
   }
 
@@ -100,7 +100,8 @@ export class CreateClientComponent implements OnInit {
         'Compte 200'
       ).subscribe({
         next: (response) => {
-          this.updateClient(response.client.numcin,response.client.id);
+          // this.updateClient(response.client.numcin,response.client.id);
+          this.createPortefeuille(response.client.id,AccountType.getPlafond(this.formData.accountType as AccountTypeEnum));
           this.success = 'Client créé avec succès';
 
           this.loading = false;

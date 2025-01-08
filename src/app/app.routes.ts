@@ -22,12 +22,16 @@ import { CardFormComponent } from './card-form/card-form.component';
 import { VirementComponent } from './virement/virement.component';
 import { RechargeComponent } from './recharge/recharge.component';
 import { VirementCryptoComponent } from './virement-crypto/virement-crypto.component';
+import { CryptoWalletLoginComponent } from './crypto-wallet-login/crypto-wallet-login.component';
+import { CryptoWalletCreateComponent } from './crypto-wallet-create/crypto-wallet-create.component';
+import { CryptoWalletDashboardComponent } from './crypto-wallet-dashboard/crypto-wallet-dashboard.component';
+import { CryptoWalletTradeComponent } from './crypto-wallet-trade/crypto-wallet-trade.component';
 
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'total',
+    redirectTo: 'login1',
     pathMatch: 'full'
   },
   {
@@ -57,14 +61,14 @@ export const routes: Routes = [
   {
     path: 'currency',
     component: CurrencyConverterComponent,
-    // canActivate: [AuthGuard],
-    // data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder à currency
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder à currency
   },
   {
     path: 'converter',
     component: CurrencyConverterComponent,
-    // canActivate: [AuthGuard],
-    // data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder à converter
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder à converter
   },
   {
     path: 'side-bar',
@@ -77,14 +81,14 @@ export const routes: Routes = [
   {
     path: 'facture',
     component: FactureComponent,
-    // canActivate: [AuthGuard],
-    // data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder à facture
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder à facture
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    // canActivate: [AuthGuard],
-    // data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder au dashboard
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_CLIENT'] }  // Seuls les clients peuvent accéder au dashboard
   },
   {
     path: 'cart',
@@ -122,5 +126,21 @@ export const routes: Routes = [
   {
     path: 'recharge',
     component: RechargeComponent
+  },
+  {
+    path: 'crypto-wallet-login',
+    component: CryptoWalletLoginComponent
+  },
+  {
+    path: 'crypto-wallet-create',
+    component: CryptoWalletCreateComponent
+  },
+  {
+    path: 'crypto-wallet-dashboard',
+    component: CryptoWalletDashboardComponent
+  },
+  {
+    path: 'crypto-wallet-trade',
+    component: CryptoWalletTradeComponent
   },
 ];

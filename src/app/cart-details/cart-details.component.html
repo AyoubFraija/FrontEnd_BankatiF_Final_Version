@@ -86,7 +86,7 @@
                      <div class="balance-container">
                              <div class="balance-amount">{{carte.solde}} {{carte.devise}}</div>
                              <div class="balance-limit">
-                              {{carte.solde}} {{carte.devise}} / from {{carte.solde_init}} {{carte.devise}}
+                              {{carte.solde}} {{carte.devise}} / from {{carte.solde}} {{carte.devise}}
                                <div class="balance-bar-container">
                                 <div class="balance-bar" [ngStyle]="{'width.%': getRemainingBalancePercentage(carte)}"></div>
                             </div>
